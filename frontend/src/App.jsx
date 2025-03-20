@@ -1,40 +1,66 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
 import Header from './Header.jsx'
+import LinkCard from './LinkCard.jsx'
 
 const App = () => {
-  const [data, set_data] = useState(null);
-  const [url, set_url] = useState('');
+  const [data, set_data] = useState('');
+  const [url_val, set_url] = useState('');
   const url_handler = (event) => {
     console.log(event.target.value)
     set_url(event.target.value);
   };
 
   const submit_download = async () => {
-    console.log("Push!");
-    console.log(url);
-    //const data = await fetch(`http://localhost:3000/download?url=${url}`);
-    //const data = await fetch(`http://localhost:3000/download/`)
-    const resdata = await fetch(`http://localhost:3000/download?url=${url}`)
-    console.log(resdata)
+    const resdata = await fetch(`http://localhost:3000/download?url=${url_val}`)
     set_data(resdata);
     //console.log(data)
     set_url('');
   };
 
-  return(
-    <div>
-      <label htmlFor="video">Type a valid YouTube video url</label>
-      <input 
-        type="text"
-        name="video"
-        value={url}
-        onChange={url_handler}
-        placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-      />
+  const get_video = () => {
+    fetch(`http://localhost:3000/download?url=${url_val}`)
+    .then(res => res.json())
+    .then(json => set_data(json));
 
-      <button type="submit" onClick={submit_download}>Download</button>
-    </div>
+    set_url('');
+  }
+
+  return(
+    <>
+      <div id="header">
+        <h1>YT2DL</h1>
+        <a href="">HOME</a>
+        <a href="">README</a>
+        <a href="https://www.github.com/java-hater">GITHUB</a>
+      </div>
+      <div id="card-background">
+        <div className="mainCard">
+          <div className="videoLabel">
+            <label htmlFor="video">Type a valid YouTube video URL</label>
+          </div>
+          <div className="magicCard">
+            <input 
+              type="text"
+              name="video"
+              value={url_val}
+              onChange={url_handler}
+              placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            />
+          </div>
+          <div className="downloadButton">
+            <button type="submit" onClick={get_video}>Download</button>
+          </div>
+        </div>
+      </div>
+      <div className="spawnCards">
+        {data?data.metadata.map((format_name, i) => (
+          <div className="linkCard" key={i}>
+            <LinkCard formatter={format_name}/>
+          </div>
+        )) : <div> No download yet </div>}
+      </div>
+    </>
   );
 }
 export default App;

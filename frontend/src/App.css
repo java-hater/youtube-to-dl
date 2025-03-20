@@ -1,1 +1,89 @@
+html {
+  display:block;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  justify-content:center;
+}
 
+#header {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#card-background {
+  background-image: linear-gradient(to bottom, #e5989b 0 66%, #b5838d 66% 100%);
+  width: 100%;
+  padding-bottom: 32px;
+}
+
+div {
+  display:block;
+  unicode-bidi: isolate;
+}
+
+.mainCard {
+  background-color:white;
+  max-width: 568px;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.videoLabel {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 16px;
+  overflow: hidden;
+}
+
+.magicCard {
+  margin: 16px 0;
+}
+
+input[type="text"] {
+  color: #7f8d96;
+  font-size: 16px;
+  width: 100%;
+  height: 48px;
+  border: 1px #cfdcdd solid;
+  border-radius: 100px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.downloadButton {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin-right: 0;
+  color: white;
+  background-color: #151515;
+  font-size: 14px;
+  height: 40px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 0 16px
+}
+
+.spawnCards {
+  background-color: red
+}
+
+.linkCard {
+
+}
