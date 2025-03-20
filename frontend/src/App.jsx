@@ -63,7 +63,7 @@ const App = () => {
           <div className="linkCard" key={i}>
             <LinkCard formatter={format_name}/>
           </div>
-        )) : <div id="waiting"> Waiting for download...</div>}
+        )) : <div id="waiting"> </div>}
       </div>
     </>
   );

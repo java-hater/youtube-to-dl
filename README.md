@@ -1,6 +1,8 @@
 # youtube-2-download
  A YouTube downloader using React, NodeJS.
 
+  ![Demo](images/demo.png)
+
 ## Usage
   Paste the URL of the YouTube video you wish to download, click download, click the desired filetype (video/audio)(mp4/webm) and quality (480p, 720p, 1080p, etc). Another window will open where you can watch your video in an isolated environment, or you can click the three dots on the right and then download. 
 ## Instructions
