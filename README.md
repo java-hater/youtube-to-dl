@@ -14,5 +14,5 @@
   ### Frontend
     4. npm install
     5. npm run dev
-    6. Open 'http://localhost:(the port specified in the console)'
+  6. Open 'http://localhost:(the port specified in the console)'
   7. Paste a YouTube URL in the search bar.
