@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './App.css'
-import Header from './Header.jsx'
-import LinkCard from './LinkCard.jsx'
+import LinkCard from './components/LinkCard.jsx'
 
 const App = () => {
   const [data, set_data] = useState('');
@@ -28,12 +27,17 @@ const App = () => {
 
   return(
     <>
-      <div id="header">
-        <h1>YT2DL</h1>
-        <a href="">HOME</a>
-        <a href="">README</a>
-        <a href="https://www.github.com/java-hater">GITHUB</a>
+      <div id="header-background">
+          <div id="header">
+          <h1>YT2DL</h1>
+          <div>
+            <a href="">HOME</a>
+            <a href="">README</a>
+            <a href="https://www.github.com/java-hater">GITHUB</a>  
+          </div> 
+        </div>  
       </div>
+      
       <div id="card-background">
         <div className="mainCard">
           <div className="videoLabel">
@@ -53,12 +57,13 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className="spawnCards">
+      
+      <div id="spawnCards">
         {data?data.metadata.map((format_name, i) => (
           <div className="linkCard" key={i}>
             <LinkCard formatter={format_name}/>
           </div>
-        )) : <div> No download yet </div>}
+        )) : <div id="waiting"> Waiting for download...</div>}
       </div>
     </>
   );

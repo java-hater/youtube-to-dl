@@ -1,8 +1,9 @@
 import React from 'react';
+import './LinkCard.css';
 
 const LinkCard = ({formatter}) => {
   return(
-    <div>
+    <div id="linkcard">
       <a 
         href={formatter.url}
         target = "_blank"

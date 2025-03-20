@@ -1,0 +1,17 @@
+#linkcard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 5px;
+  margin-top: 5px; 
+
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+
+#linkcard a {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 3px;
+}
